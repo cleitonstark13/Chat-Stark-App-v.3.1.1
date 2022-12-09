@@ -1,0 +1,9 @@
+# Chat-Stark
+Chat em Java utilizando os conceitos de Socket e Thread
+/*
+ * UNIVERSIDADE ESTADUAL DE GOIÁS
+ * PROF: MÁRCIO
+ * ALUNO: CLEITON ALVES E SILVA JÚNIOR
+ * CURSO: SISTEMAS DE INFORMAÇÃO
+ * DISCIPLINA: PROGRAMAÇÃO ORIENTADA A OBJETO
+*/
