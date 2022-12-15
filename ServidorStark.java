@@ -168,13 +168,10 @@ public class ServidorStark extends Thread {
             ServerSocket server = new ServerSocket(8080);
             System.out.println("Bem vindo ao Chat Stark");
             System.out.println("ServidorStark rodando na porta 8080");
-            // JLabel servidorLigado = new JLabel("Deseja desligar o servidor?");  
-            // Object[] telaServidor = {servidorLigado};
-            // UIManager.put("OptionPane.okButtonText", "Desligar!");
-            // int n = JOptionPane.showConfirmDialog(null, telaServidor, "Servidor Stark", JOptionPane.DEFAULT_OPTION);
-            // if(n == JOptionPane.OK_OPTION){
-            //     System.exit(0);
-            // }
+            JLabel servidorLigado = new JLabel("SERVIDOR RODANDO NA PORTA 8080");  
+            Object[] telaServidor = {servidorLigado};
+            JOptionPane.showMessageDialog(null, telaServidor, "Servidor Stark", JOptionPane.INFORMATION_MESSAGE);
+            
                 while (true) {
                 Socket conexao = server.accept();
                 Thread t = new ServidorStark(conexao);
