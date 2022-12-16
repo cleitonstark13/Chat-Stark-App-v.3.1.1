@@ -31,6 +31,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
     private JTextField txtMsg;
     private JButton btnSend;
     private JButton btnSair;
+    private JButton btnAjuda;
     private JLabel lblHistorico;
     /*
      * private JLabel lbllistaPessoas;
@@ -142,8 +143,12 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
         ImageIcon sairButton = new ImageIcon("iconSair.png");
         btnSair = new JButton("Sair", sairButton);
         btnSair.setToolTipText("Sair do Chat");
+        ImageIcon ajudaButton = new ImageIcon("iconAjuda.png");
+        btnAjuda = new JButton("Ajuda", ajudaButton);
+        btnAjuda.setToolTipText("Botão de ajuda");
         btnSend.addActionListener(this);
         btnSair.addActionListener(this);
+        btnAjuda.addActionListener(this);
         btnSend.addKeyListener(this);
         txtMsg.addKeyListener(this);
         Informacoes = new JLabel("© CHAT STARK v.3.1.1");
@@ -166,6 +171,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
         pnlContent.add(txtMsg);
         pnlContent.add(btnSend);
         pnlContent.add(btnSair);
+        pnlContent.add(btnAjuda);
         pnlContent.add(Informacoes);
         Color MinhaCorAzulChatStark = new Color(0, 157, 223);
         pnlContent.setBackground(MinhaCorAzulChatStark);
@@ -250,6 +256,19 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
             }
     }
 
+    public void ajuda() throws IOException {
+
+        ImageIcon imagemAjuda = new ImageIcon("iconAjuda.png");
+        JLabel JL01 = new JLabel("1) BOTÃO ENVIAR - ENVIA A MENSAGEM");
+        JLabel JL02 = new JLabel("2) BOTÃO SAIR - FECHA O CHAT");
+        JLabel JL03 = new JLabel("3) ENVIAR MENSAGEM NO PRIVADO - COLOQUE A MENSAGEM SEGUIDA DO @NOME DO DESTINO QUE DESEJA ENVIAR A MENSAGEM");
+        UIManager.put("OptionPane.okButtonText", "Fechar");
+        Object[] ajudaTela = {
+            JL01, JL02, JL03
+        };
+        JOptionPane.showMessageDialog(null, ajudaTela,"Tela de ajuda!", JOptionPane.DEFAULT_OPTION, imagemAjuda);
+    }
+
     /***
      * Método usado quando o usuário clica em sair
      * 
@@ -267,6 +286,8 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
                 enviarMensagem(txtMsg.getText());
             else if (e.getActionCommand().equalsIgnoreCase(btnSair.getActionCommand()))
                 sair();
+                else if (e.getActionCommand().equalsIgnoreCase(btnAjuda.getActionCommand()))
+                ajuda();
         } catch (IOException e1) {
             e1.printStackTrace();
         }
