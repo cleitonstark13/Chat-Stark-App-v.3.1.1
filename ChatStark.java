@@ -79,8 +79,12 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
         NomeApresentacao = new JLabel("Bem vindo ao Chat Stark");
         Versao = new JLabel("Versão v.3.1.0");
         Object[] telaApresentacao = { NomeApresentacao, Versao };
-        JOptionPane.showMessageDialog(null, telaApresentacao, "Chat Stark Ltda. 2022 - v.3.1.0",
-                JOptionPane.INFORMATION_MESSAGE, iconApresentacao);
+        UIManager.put("OptionPane.yesButtonText", "Entrar!");
+        UIManager.put("OptionPane.noButtonText", "Sair!");
+        int n = JOptionPane.showConfirmDialog(null, texts, "Cadastro de usuário", JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE, iconCadastro);
+        if(n == JOptionPane.NO_OPTION){
+            System.exit(0);
+        }
 
         /*
          * CADASTRO
