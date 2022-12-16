@@ -20,6 +20,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.Socket;
 import javax.swing.*;
+import javax.swing.text.html.Option;
 
 public class ChatStark extends JFrame implements ActionListener, KeyListener {
     private static final long serialVersionUID = 1L;
@@ -77,14 +78,10 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
          */
 
         NomeApresentacao = new JLabel("Bem vindo ao Chat Stark");
-        Versao = new JLabel("Versão v.3.1.0");
+        Versao = new JLabel("Versão v.3.1.1");
         Object[] telaApresentacao = { NomeApresentacao, Versao };
-        UIManager.put("OptionPane.yesButtonText", "Entrar!");
-        UIManager.put("OptionPane.noButtonText", "Sair!");
-        int n = JOptionPane.showConfirmDialog(null, texts, "Cadastro de usuário", JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE, iconCadastro);
-        if(n == JOptionPane.NO_OPTION){
-            System.exit(0);
-        }
+        JOptionPane.showMessageDialog(null, telaApresentacao, "Chat Stark Ltda. 2022 - v.3.1.1",
+                JOptionPane.INFORMATION_MESSAGE, iconApresentacao);
 
         /*
          * CADASTRO
@@ -112,10 +109,12 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
                  */
                 NomeCaixa, txtNome
         };
-        UIManager.put("OptionPane.okButtonText", "Entrar!");
-        JOptionPane.showMessageDialog(null, texts, "Cadastro de usuário", JOptionPane.INFORMATION_MESSAGE,
-                iconCadastro);
-
+        UIManager.put("OptionPane.yesButtonText", "Entrar");
+        UIManager.put("OptionPane.noButtonText", "Sair");
+        int n = JOptionPane.showConfirmDialog(null, texts, "Cadastro de usuário", JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE, iconCadastro);
+        if(n == JOptionPane.NO_OPTION){
+            System.exit(0);
+        }
         /* PAINEL DO CHAT */
         JLabel imagemIcon = new JLabel(new ImageIcon("chatLogo.png"));
         pnlContent = new JPanel();
@@ -147,7 +146,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
         btnSair.addActionListener(this);
         btnSend.addKeyListener(this);
         txtMsg.addKeyListener(this);
-        Informacoes = new JLabel("© CHAT STARK v.3.1.0");
+        Informacoes = new JLabel("© CHAT STARK v.3.1.1");
         Informacoes.setForeground(Color.WHITE);
         /*
          * JScrollPane scrollLista = new JScrollPane(listaPessoas);
