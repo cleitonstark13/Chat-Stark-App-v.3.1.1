@@ -258,7 +258,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
 
     public void ajuda() throws IOException {
 
-        ImageIcon imagemAjuda = new ImageIcon("iconAjuda.png");
+        ImageIcon imagemAjuda = new ImageIcon("iconAjudaTOP.png");
         JLabel JL01 = new JLabel("1) BOTÃO ENVIAR - ENVIA A MENSAGEM");
         JLabel JL02 = new JLabel("2) BOTÃO SAIR - FECHA O CHAT");
         JLabel JL03 = new JLabel("3) ENVIAR MENSAGEM NO PRIVADO - COLOQUE A MENSAGEM SEGUIDA DO @NOME DO DESTINO QUE DESEJA ENVIAR A MENSAGEM");
