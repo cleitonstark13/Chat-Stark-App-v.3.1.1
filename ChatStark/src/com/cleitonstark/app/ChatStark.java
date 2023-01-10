@@ -58,7 +58,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
      */
 
      /*
-      * Tela Layout Chat Stark v2.10
+      * Tela Layout Chat Stark v3.1.1.1
       */
     public ChatStark() throws IOException {
         /*
@@ -145,7 +145,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
         setResizable(false);
         setSize(310, 630);
         setVisible(true);
-        setLocation(500, 100);
+        setLocation(650, 100);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -237,7 +237,7 @@ public class ChatStark extends JFrame implements ActionListener, KeyListener {
         Object[] ajudaTela = {
             JL01, JL02, JL03
         };
-        JOptionPane.showMessageDialog(null, ajudaTela,"Tela de ajuda!", JOptionPane.DEFAULT_OPTION, imagemAjuda);
+        JOptionPane.showMessageDialog(null, ajudaTela,"Tela de ajuda! (F1)", JOptionPane.DEFAULT_OPTION, imagemAjuda);
     }
 
     /***
